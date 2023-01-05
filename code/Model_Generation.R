@@ -1,11 +1,5 @@
 rm(list = ls())
 
-setwd("~/BioR/proj02/")
-dir.create("02")
-setwd(paste(getwd(),"02",sep = "/"))
-dir.names <- getwd()
-dir.create("tmp")
-
 library(tidyverse) ## 加载R包
 library(rms)
 library(Hmisc)
@@ -28,10 +22,6 @@ library(randomForestSRC)
 library(randomForest)
 library(varSelRF)
 library(pROC)
-
-load("~/BioR/proj02/01/tidyverse.Rdata")
-load("~/BioR/proj02/00/FAP_expression.Rdata")
-load("~/BioR/proj02/00/FAP_metadata.Rdata")
 
 df <- t(FAP.all) %>% as.data.frame()
 

@@ -1,15 +1,8 @@
 rm(list = ls())
 
-setwd("~/BioR/proj01")
-dir.create("07")
-setwd(paste(getwd(),"07",sep = "/"))
-dir.names <- getwd()
-dir.create("tmp")
-
 
 library(dplyr)
-load("~/BioR/proj01/05/TCGA_expdata_with_RiskScore.Rdata")
-load("~/BioR/proj01/02/riskscore.Rdata")
+
 
 df <- df[,c(1,ncol(df))]
 expdata <- merge(df,expdata,by="Samples")

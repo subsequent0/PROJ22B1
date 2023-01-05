@@ -1,10 +1,5 @@
 rm(list = ls())
 
-setwd("~/BioR/proj02/")
-dir.create("04")
-setwd(paste(getwd(),"04",sep = "/"))
-dir.names <- getwd()
-dir.create("tmp")
 
 source("stemness_index.R")##构建模型的代码在里面，删掉TCGA数据的预测部分即可 获得"Stemness_index.rda"
 library(tidyverse)
@@ -13,10 +8,6 @@ normalization <- function(x) {
   return((x-min(x))/(max(x)-min(x)))
 }
 
-
-
-load("~/BioR/proj02/03/df_Samples_subtype_expression.Rdata")
-load("~/BioR/proj02/01/tidyverse.Rdata")
 
 expdat <- df[order(df$subtype),which(colnames(df) %in% DEPx$SYMBOL)] %>% t()
 library(ComplexHeatmap)

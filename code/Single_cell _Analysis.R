@@ -1,11 +1,5 @@
 rm(list = ls())
 
-setwd("E:/Bio/project01")
-dir.create("01")
-setwd(paste(getwd(),"01",sep = "/"))
-dir.names <- getwd()
-dir.create("tmp")
-
 library(Seurat)
 
 raw.data <- read.table("GSE109308_Colon_FAP_TPM_new2.txt",header = T,sep = "\t",quote = "",row.names = 1)

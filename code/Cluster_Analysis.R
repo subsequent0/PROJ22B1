@@ -1,10 +1,5 @@
 rm(list = ls())
 
-setwd("~/BioR/proj02/")
-dir.create("03")
-setwd(paste(getwd(),"03",sep = "/"))
-dir.names <- getwd()
-dir.create("tmp")
 
 library(factoextra)
 library(NbClust)
@@ -17,8 +12,6 @@ library(ConsensusClusterPlus)
 dir.names='ConsensusClusterPlus'
 
 
-load("~/BioR/proj02/01/tidyverse.Rdata")
-load("~/BioR/proj02/02/df.Rdata")
 
 df.fap <- df[df$type ==1,which(colnames(df) %in% c("Samples",DEP))]
 
