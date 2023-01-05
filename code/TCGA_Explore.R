@@ -1,16 +1,10 @@
 rm(list = ls())
 
-setwd("~/BioR/proj02/")
-dir.create("05")
-setwd(paste(getwd(),"05",sep = "/"))
-dir.names <- getwd()
-dir.create("tmp")
 
 df <- read.csv("../00/TCGA_rawdata/dataFilt.COAD.final.patient.csv",header = T,quote = "",check.names = F,row.names = 1)
 
 df <- as.data.frame(t(df))
 
-load("~/BioR/proj02/TCGA_rawdata/Diagnosis_model.Rdata")
 
 df <- df[,colnames(df) %in% lasso_geneids]
 
